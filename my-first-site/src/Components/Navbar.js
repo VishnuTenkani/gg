@@ -34,7 +34,7 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item" className={(this.state.activeClassName === "Home") ? "active" : ""} onClick={() => this.changeNav('1')}>
-                <a className="nav-link smoothscroll" href="#">Home
+                <a className="nav-link smoothscroll" href="/">Home
                       <span className="sr-only">(current)</span>
                     </a>
               </li>
