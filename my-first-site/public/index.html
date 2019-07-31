@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Caveat|Passion+One&display=swap" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <style>
+    .ipl-progress-indicator.available {
+      opacity: 0;
+    }
+
+    .ipl-progress-indicator {
+      background-color: #f5f5f5;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      opacity: 1;
+      pointer-events: none;
+      -webkit-transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+      -moz-transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+      transition: opacity cubic-bezier(.4, 0, .2, 1) 436ms;
+      z-index: 9999;
+    }
+
+    .insp-logo-frame {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      -webkit-animation: fadein 436ms;
+      -moz-animation: fadein 436ms;
+      animation: fadein 436ms;
+      height: 98%;
+    }
+
+    .insp-logo-frame-img {
+      width: 112px;
+      height: 112px;
+      -webkit-align-self: center;
+      -moz-align-self: center;
+      align-self: center;
+      border-radius: 50%;
+    }
+
+    .ipl-progress-indicator-head {
+      background-color: gray;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cs-loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .cs-loader-inner {
+      transform: translateY(-50%);
+      top: 50%;
+      position: absolute;
+      width: calc(100% - 200px);
+      color: #FFF;
+      padding: 0 100px;
+      text-align: center;
+    }
+
+    .cs-loader-inner label {
+      font-size: 20px;
+      opacity: 0;
+      display: inline-block;
+    }
+
+    @keyframes lol {
+      0% {
+        opacity: 0;
+        transform: translateX(-300px);
+      }
+
+      33% {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+
+      66% {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateX(300px);
+      }
+    }
+
+    @-webkit-keyframes lol {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateX(-300px);
+      }
+
+      33% {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+      }
+
+      66% {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+      }
+
+      100% {
+        opacity: 0;
+        -webkit-transform: translateX(300px);
+      }
+    }
+
+    .cs-loader-inner label:nth-child(6) {
+      -webkit-animation: lol 3s infinite ease-in-out;
+      animation: lol 3s infinite ease-in-out;
+    }
+
+    .cs-loader-inner label:nth-child(5) {
+      -webkit-animation: lol 3s 100ms infinite ease-in-out;
+      animation: lol 3s 100ms infinite ease-in-out;
+    }
+
+    .cs-loader-inner label:nth-child(4) {
+      -webkit-animation: lol 3s 200ms infinite ease-in-out;
+      animation: lol 3s 200ms infinite ease-in-out;
+    }
+
+    .cs-loader-inner label:nth-child(3) {
+      -webkit-animation: lol 3s 300ms infinite ease-in-out;
+      animation: lol 3s 300ms infinite ease-in-out;
+    }
+
+    .cs-loader-inner label:nth-child(2) {
+      -webkit-animation: lol 3s 400ms infinite ease-in-out;
+      animation: lol 3s 400ms infinite ease-in-out;
+    }
+
+    .cs-loader-inner label:nth-child(1) {
+      -webkit-animation: lol 3s 500ms infinite ease-in-out;
+      animation: lol 3s 500ms infinite ease-in-out;
+    }
+  </style>
+  <title>Techy Web Template</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div class="ipl-progress-indicator" id="ipl-progress-indicator">
+    <div class="ipl-progress-indicator-head">
+      <div class="cs-loader-inner">
+        <label> ●</label>
+        <label> ●</label>
+        <label> ●</label>
+        <label> ●</label>
+        <label> ●</label>
+        <label> ●</label>
+      </div>
+    </div>
+    <div class="insp-logo-frame">
+
+    </div>
+  </div>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+</html>
